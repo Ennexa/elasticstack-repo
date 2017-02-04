@@ -1,0 +1,10 @@
+---
+ - name: Add ElasticStack repository.
+   yum_repository:
+     name: "elastic-{{ elastic_repo_version }}"
+     description: Extra Packages for Enterprise Linux 7 - $basearch
+     baseurl: https://artifacts.elastic.co/packages/{{ elastic_repo_version }}/yum
+     failovermethod: priority
+     enabled: yes
+     gpgcheck: yes
+     gpgkey: https://artifacts.elastic.co/GPG-KEY-elasticsearch
